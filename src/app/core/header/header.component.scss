@@ -1,0 +1,35 @@
+.header{
+    box-shadow:3px 3px 5px 2px #ccc;
+  
+    .mindtree-theme-bar-container{
+  
+      .mindtree-theme-bar{
+        width:100%;
+        height:12px;
+        margin-top:-10px;
+      }
+
+    }
+  
+    .branding-container{
+      height: 55px;
+  
+      .brand-name{
+        padding:5px 20px 10px 2%;
+        margin-top:0px;
+      }
+      .mindtreelogo{
+        float:right;
+        margin-top:-76px;
+        margin-right:10px;
+        .mindtree-logo
+        {
+            width: 168px;
+            height: 50px;
+        }
+      }
+      .tool-logo{
+        height: 100%
+      }
+    }
+  }

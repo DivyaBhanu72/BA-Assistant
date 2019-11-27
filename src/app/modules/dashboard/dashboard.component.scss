@@ -1,0 +1,71 @@
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 50% 47%;
+    padding: 5px;
+  }
+  .grid-item {
+    font-size: 30px;
+    text-align: center;
+  }
+ .myclass{
+    width: 92%;
+    text-align: center; 
+    padding: 1%;
+    font-size: 16px;
+ }
+ h2{
+     margin: auto;
+ }
+ 
+ .container{
+    text-align: center;
+ }
+ .my_button{
+    padding: 0.6% 5%; 
+    margin: 3% 0; 
+    border: 1px solid #B3A9A9; 
+    border-radius: 9px;
+    box-sizing: border-box;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    // margin: 4px 2px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    cursor: pointer;
+ }
+ .my_button:hover {
+    color: white;
+ }
+ .disabled {
+    pointer-events: none;  
+  }
+
+.details-items{
+    padding-top: 3%;  
+    padding-left: 2%; 
+    padding-right:2%;
+}
+
+.details-card{
+    height: 100%;
+    text-align: left;
+    padding-top: 0px;
+}
+.notify{
+    font-size:16px;
+    text-align:left;
+    color:gray;
+    margin-left: 3.5%;
+}
+.scrollbar{
+  height: 350px;
+  overflow:scroll;
+
+}
+
+.form-control{
+  border: 1px solid white;
+}

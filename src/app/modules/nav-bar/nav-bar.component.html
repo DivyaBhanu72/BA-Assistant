@@ -1,0 +1,92 @@
+<!-- <button *ngIf="this.domainmodelservice.flag" mat-button (click)="buttonclicked()" style="background-color: yellow;
+margin-bottom: 20px;color:blue">Click here for Domain Model</button> -->
+
+<!-- <mat-tab-group mat-stretch-tabs class="example-stretched-tabs mat-elevation-z4">
+  <mat-tab label="SearchResults">
+    <app-google-search-links></app-google-search-links>
+  </mat-tab>
+  <mat-tab label="Key Domain Terms">
+    <app-word-cloud></app-word-cloud>
+  </mat-tab>
+  <mat-tab label="Create Domain Model">
+    <app-domain-model></app-domain-model>
+  </mat-tab>
+</mat-tab-group> -->
+
+<!--
+Main Layout
+
+<ul>
+
+  <li class="tab">
+       <input type="radio" name="tabs" checked="checked" id="tab1" />
+       <label for="tab1">One</label>
+       <div id="tab-content1" class="content">Text</div>
+  </li>
+
+  <li class="tab">
+       <input type="radio" name="tabs" checked="checked" id="tab2" />
+       <label for="tab2">Two</label>
+       <div id="tab-content2" class="content">Text</div>
+  </li>
+
+</ul>  
+
+
+
+-->
+
+<ul class="tabs">
+
+  <li class="tab" id="tab11" (click)="ontab1click()">
+    <input type="radio" name="tabs" checked="checked" id="tab1"  />
+    <label for="tab1">Search Results</label>
+    
+    <div id="tab-content1" class="content">
+        <hr>
+      <app-google-search-links></app-google-search-links>
+    </div>
+  </li>
+
+  <li class="tab" id="tab12" (click)="ontab2click()">
+    <input type="radio" name="tabs" id="tab2" />
+    <label for="tab2">Key Domain Terms</label>
+   
+    <div id="tab-content2" class="content">
+        <hr>
+      <app-word-cloud></app-word-cloud>
+    </div>
+  </li>
+
+  <li class="tab" id="tab13" (click)="ontab3click()">
+    <input type="radio" name="tabs" id="tab3"  />
+    <label for="tab3">Create Domain Model</label>
+   
+    <div id="tab-content3" class="content">
+        <hr>
+        <div *ngIf="!this.domainmodelService.flag">
+            Loading, please wait...
+          </div>
+          <div *ngIf="this.domainmodelService.flag">
+      <app-domain-model></app-domain-model>
+      </div>
+    </div>
+  </li>
+
+</ul>
+
+
+
+
+<!-- <ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#links">SearchResults</a></li>
+    <li><a data-toggle="tab" href="#wordcloud">WordCloud</a></li>
+  </ul>
+  
+  <div class="tab-content">
+    <div id="links" class="tab-pane fade in active">
+        <app-google-search-links></app-google-search-links>
+    </div>
+    <div id="wordcloud" class="tab-pane fade">
+        <app-word-cloud></app-word-cloud>
+    </div> -->

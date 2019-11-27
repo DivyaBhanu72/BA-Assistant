@@ -1,0 +1,83 @@
+<div class="grid-container">
+
+    <div class="grid-item" >
+        <h2>Welcome To BA Assist</h2>
+        <p style="font-size:18px">What are you intrested to Know Today?</p>
+
+        <form #baassist="ngForm" (ngSubmit)="onClickSubmit(baassist.value,baassist)">
+
+            <mat-form-field class="myclass">
+                <mat-label>Domain</mat-label>
+                <input matInput required placeholder="E-Commerce, Revenue Management, ..." [(ngModel)]=jsonclass.domain name="domain">
+            </mat-form-field>
+            <br/>
+
+            <mat-form-field class="myclass">
+                <mat-label>Sub-Domain</mat-label>
+                <input matInput required placeholder="Online Food Ordering, Hotel Revenue Management, ..." [(ngModel)]=jsonclass.sub_domain name="sub_domain">
+            </mat-form-field>
+            <br/>
+
+            <mat-form-field class="myclass">
+                <mat-label>Country</mat-label>
+                <mat-select name="country" class="form-control" placeholder="GEO" required [(ngModel)]=jsonclass.country>
+                    <mat-option *ngFor="let country of Countries" [value]="country.name" id="country.code"> {{country.name}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <!-- <select name="country" class="form-control"  placeholder = "Sub-Domain" required ngModel>
+            <option value="" disabled selected >Country</option>
+            <option *ngFor="let country of Countries" [value]="country.name" id="country.code"> {{country.name}}</option>
+        </select>    -->
+            <br/>
+            <p class="notify">*Please fill the form so that I can know about your topic of interest.</p>
+
+            <button class="my_button" [class.disabled]="!baassist.valid" mat-raised-button color="primary" 
+            [disabled]="!baassist.valid">Assist Me</button>
+
+        </form>
+    </div>
+
+    <div  class="grid-item details-items" >
+            <ngx-ui-loader></ngx-ui-loader>
+        <mat-card class="details-card">
+                <img mat-card-image src="./../../../assets/mindtree-theme-bar.PNG" alt="">
+            <mat-card-header >
+                    
+                <mat-card-title style="margin-top: -3%;" >BA Assist</mat-card-title>
+                <mat-card-subtitle style="margin-bottom: 12%;">Assistant to do smart search </mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content style="color:gray" *ngIf="this.formSubmitted" >
+                <img mat-card-image src="./../../../assets/mindtree-theme-bar.PNG" alt="">
+                <p>
+                    BA Assist app is for those people who want to know about some domain which they are not aware of
+                    and want a complete detail about it. After filling this form BA Assist will do a detail search and find
+                    out the content which would be most suitable for your requirement.
+                    <br/><br/>
+                    BA Assist applies various machine learning algorithm to find out what is actually important for a BA and provides
+                    only that information.
+                    <br/><br/>
+                    You can simply use BA Assist by filling this form and clicking on submit button.
+                    Your response will be processed and a detailed document would be sent to you on your email ID provided
+                    at the time of login.
+                    <br/><br/>
+                    Your document will contain Word cloud, various links and summary for each link. 
+
+                </p>
+            </mat-card-content>
+            <mat-card-content style="color:gray" class="scrollbar" *ngIf="!this.formSubmitted">
+                    <img mat-card-image src="./../../../assets/mindtree-theme-bar.PNG" alt="">
+                    <div  *ngFor="let item of keys">
+                        
+                    <p><a href="{{item}}">{{item}}</a></p>
+                    <p>{{response[item]}}</p>
+                    </div>
+                </mat-card-content>
+        </mat-card>
+    </div>
+</div>
+
+<style>
+    select:invalid {
+        color: rgb(139, 137, 137);
+    }
+</style>

@@ -1,0 +1,137 @@
+.word-cloud{
+    width:100%;
+    margin:10% 10% 10% 30%;
+    height:100%
+}
+.nav
+{
+    padding-left: 40%
+}
+.tab-content
+{
+   margin-top:2%
+}
+.mat-tab-label {
+    min-width: 25px !important;
+    padding: 5px;
+    background-color: transparent;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+/* Styles for the active tab label */
+.mat-tab-label.mat-tab-label-active {
+    min-width: 25px !important;
+    padding: 5px;
+    /* background-color: transparent; */
+    /* border: solid green; */
+    /* background-color: rgb(104, 9, 64); */
+    font-size: 20px;
+    font-weight: 700;
+}
+
+/* Styles for the ink bar */
+.mat-ink-bar {
+    background-color: green !important;
+}
+
+
+
+/* New CSS */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+h1, h3{
+  text-transform: uppercase;
+  font-weight: normal;
+}
+
+.tabs{
+    /* width: -webkit-fill-available !important; */
+    display: block;
+    margin: 10px 0;
+    position: relative;
+}
+/* .tab{
+    border:1px solid green
+} */
+
+.tabs .tab{
+    float: left;
+    display: block;
+    width: 33.33%;
+    /* border:1px solid grey; */
+    /* border-style:outset */
+}
+
+.tabs .tab>input[type="radio"] {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+    /* border:1px solid red */
+}
+
+.tabs .tab>label {
+    padding-left: 25%;
+    padding-right: -1%;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    background-color: transparent;
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+    /* display: block;
+    padding: 6px 21px;
+    font-size: 12px;
+    text-transform: uppercase;
+    cursor: pointer;
+    position: relative;
+    color: #000;
+    background: rgb(255, 255, 255); */
+}
+
+.tabs .content {
+    z-index: 0;/* or display: none; */
+    overflow: hidden;    
+    width: -webkit-fill-available;
+    padding: 25px;
+    position: absolute;
+    top: 27px;
+    left: 0;
+    /* background: #303030; */
+    color: #000;
+    margin-top: 3%;
+    opacity:0;
+    transition: opacity 400ms ease-out;
+}
+
+.tabs>.tab>[id^="tab"]:checked  {
+    top: 0;
+    border:1px solid yellow;
+    /* background: #303030; */
+    color: green;
+}
+
+
+
+.tabs>.tab>[id^="tab"]:checked ~ [id^="tab-content"] {
+    z-index: 1;/* or display: block; */
+   
+    opacity: 1;
+    transition: opacity 400ms ease-out;
+   
+}
+:checked {
+    margin-left: 25px;
+    border: 1px solid blue;
+  }
+
+  hr {
+    margin-top: -25px;
+    margin-bottom: 20px;
+    border: 0;
+    border-top: 1px solid #eee;
+  }

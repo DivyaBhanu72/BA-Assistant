@@ -1,0 +1,12 @@
+.details-card
+{
+    width: 54%;
+    margin-left: 20%;
+    /* margin-top:2% */
+}
+.scrollbar
+{
+    height: 350px;
+    overflow-y:auto;
+    overflow-x:hidden;
+}

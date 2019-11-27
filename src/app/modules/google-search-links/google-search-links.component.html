@@ -1,0 +1,62 @@
+<!-- <div  class="grid-item details-items" >
+           
+    <mat-card class="details-card" >
+        <mat-card-header >
+                
+            <mat-card-title style="margin-top: -3%;" >Search Results</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src="./../../../assets/mindtree-theme-bar.PNG" alt="" *ngIf="!isCustomSearch">
+        <mat-card-content style="color:gray" class="scrollbar" *ngIf="!this.formSubmitted">
+                
+                <div  *ngFor="let item of this.googlesearchlinksservice.GoogleLinks">
+                    
+                <p><a href="{{item}}">{{item}}</a></p>
+                </div>
+            </mat-card-content>
+
+            <mat-card-content style="color:gray" class="scrollbar" *ngIf="isCustomSearch">
+                    <img mat-card-image src="./../../../assets/mindtree-theme-bar.PNG" alt="">
+                    <div  *ngFor="let item of keys">
+                        
+                    <p><a href="{{item}}">{{item}}</a></p>
+                    <p>{{this.googlecustomsearchservice.combined_result[item]}}</p>
+                    </div>
+                </mat-card-content>
+    </mat-card>
+    </div> -->
+    <button mat-raised-button style="float:right;background-color:blueviolet;color:white" (click)="downloadpdf()">Download PDF</button>
+    
+    <div  class="grid-item details-items" >
+            <ngx-ui-loader></ngx-ui-loader>
+        <mat-card class="details-card">
+                <img mat-card-image src="./../../../assets/mindtree-theme-bar.PNG" alt="">
+            <mat-card-header >
+                    
+                <!-- <mat-card-title style="margin-top: -3%;" >BA Assist</mat-card-title>
+                <mat-card-subtitle style="margin-bottom: 12%;">Assistant to do smart search </mat-card-subtitle> -->
+            </mat-card-header>
+            <mat-card-content style="color:gray" class="scrollbar" *ngIf="!this.googlecustomsearchservice.iscustomSearch" >
+                <!-- <img mat-card-image src="./../../../assets/mindtree-theme-bar.PNG" alt=""> -->
+                <!-- <div  *ngFor="let item of this.googlesearchlinksservice.GoogleLinks">
+                    
+                        <p><a href="{{item}}">{{item}}</a></p>
+                        </div> -->
+            </mat-card-content>
+            <mat-card-content style="color:gray" class="scrollbar" *ngIf="this.googlecustomsearchservice.iscustomSearch">
+                    <!-- <img mat-card-image src="./../../../assets/mindtree-theme-bar.PNG" alt=""> -->
+                    <div  *ngFor="let item of this.keys">
+                            <p style="color:black;font-size:15px">{{item}}</p>
+                            <div  *ngFor="let childkey of this.finalchildkeys">
+                                <div *ngIf="this.googlecustomsearchservice.combined_result[item][childkey]">
+                                    
+                        
+                    <p><a href="{{childkey}}">{{childkey}}</a></p>
+                    <p >{{this.googlecustomsearchservice.combined_result[item][childkey]}}</p>
+                                </div>
+                    </div>
+                    </div>
+                </mat-card-content>
+        </mat-card>
+    </div>
+
+
